@@ -178,5 +178,26 @@ toolbarbutton.tabs-newtab-button,
 		border-radius: 7px !important;
 	}
 }
+/* special box that comes on extension pages etc */
+#identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button {
+  border-radius: 999px !important;
+  background: #1c1c1c !important;
+  padding-inline: 24px  !important;
+}
+/* toolbox as 2x2 grid: TabsToolbar full-width on top, nav-bar + PersonalToolbar as columns below */
+#navigator-toolbox {
+	display: grid !important;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"top   top"
+		"left  right";
+}
+#TabsToolbar     { grid-area: top !important; }
+#nav-bar         { grid-area: left  !important; min-width: 0 !important; }
+#PersonalToolbar { grid-area: right !important; min-width: 0 !important; }
 
-#navigator-toolbox {}
+/* keep the normally-hidden toolbars out of the 2x2 layout if they ever appear */
+#toolbar-menubar,
+#notifications-toolbar {
+	grid-column: 1 / -1 !important;
+}
