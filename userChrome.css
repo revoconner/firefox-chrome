@@ -97,6 +97,8 @@ menuitem[label="QR code from selection"],
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-icon {
 	left: 0 !important;
 	opacity: 1 !important;
+	color: hsl(203, 100%, 50%) !important;
+
 }
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-text {
 right: 0 !important;
@@ -115,27 +117,42 @@ toolbar#nav-bar,
 .browser-toolbar.chromeclass-location {
 	background: #1c1c22 !important;
 }
-/* title bar height with the tabs */
-#TabsToolbar  {
-}
-/* children of the main toolbar containing tabs and stuff */ 
-#tabbrowser-arrowscrollbox, 
-#pinned-tabs-container{
-}
-
 /* the background container for all tabs */
 #TabsToolbar-customization-target {
-    /* background: hsl(214, 27%, 10%);  */
-	border-radius: 999px;
-	margin-bottom:5px;
-	height: 80%;
-	box-shadow: inset 0 0 10px 0 #538bcc !important;
+	border-radius: 999px !important;
+	margin-bottom: 5px !important;
+	height: 80% !important;
+	padding: 0 8px !important;
+	box-shadow: inset 0 0 5px 0 #949494 !important;
 }
 /* ths is the parent of each tab and contains siblings content and background */
-.tabbrowser-tab {
-	height: 80% !important;
-}
-/* rounding the tab background  for selected, pinned and unselected */
 .tab-background {
-border-radius:999px
+	height: 31px !important;
+	min-height: 30px !important;
+	max-height: 31px !important;
+}
+.tab-content {
+	height: 38px !important;
+}
+/* tab background  for selected */
+.tab-background {
+	&:is([selected], [multiselected]) {
+		background: #000000 !important;
+		box-shadow: inset 0 0 8px 0 #26c3fc !important;
+		border-radius: 999px !important;
+	}
+}
+
+/* tab background  for UNselected */
+.tab-background {
+	&:not([selected], [multiselected]) {
+		border-radius: 999px !important;
+		box-shadow: inset 0 0 2px 0 rgb(130, 130, 130) !important;
+		background: transparent;
+	}
+}
+.tab-content {
+	&:not([selected], [multiselected]) {
+		filter: brightness(80%) saturate(80%) !important;
+	}
 }
