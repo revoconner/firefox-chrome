@@ -85,6 +85,7 @@ menuitem[label="QR code from selection"],
 	position: relative !important;
 	left: 30% !important;
 	opacity: 0 !important;
+	color: hsl(203, 100%, 50%) !important;
 	transition: opacity 0.2s, left 0.2s !important;
 }
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item .toolbarbutton-text {
@@ -101,6 +102,7 @@ menuitem[label="QR code from selection"],
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-text {
 	right: 0 !important;
 	color: hsl(203, 100%, 50%) !important;
+
 }
 toolbarbutton.bookmark-item:not(.subviewbutton) {
 	&:not([disabled], [open]):hover {
@@ -109,7 +111,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 toolbarbutton.bookmark-item:not(.subviewbutton) {
 	&:not([disabled], [open]):hover {
-		background-color: transparent;
+		background-color: transparent !important;
 	}
 }
 /* bookmark toolbar extra buttons added like extensions */
@@ -155,7 +157,7 @@ toolbarbutton.tabs-newtab-button,
 }
 .tab-content:not([selected], [multiselected]),
 .tab-content:not([selected], [multiselected]) > .tab-icon-stack * {
-	filter: brightness(80%) grayscale(100%) !important;
+	filter: brightness(80%) !important;
 }
 
 /* tab ends */
@@ -192,6 +194,15 @@ toolbarbutton.tabs-newtab-button,
   background: #1c1c1c !important;
   padding-inline: 24px  !important;
 }
+/* manual width of url bar from the dynamic width */
+#urlbar-container {
+  #nav-bar[downloadsbuttonshown][unifiedextensionsbuttonshown] & {
+    min-width: calc(var(--urlbar-container-min-width) * 1.85) !important;
+}
+}
+
+
+/* ================== TOP PART LAYOUT SHIFTER ======================= */
 /* toolbox as 2x2 grid: nav-bar + TabsToolbar as top columns (Tabs on right keeps win controls in place), PersonalToolbar full-width below */
 /* #navigator-toolbox {
 	display: grid !important;
