@@ -115,7 +115,151 @@ toolbar#nav-bar,
 .browser-toolbar.chromeclass-location {
 	background: #1c1c22 !important;
 }
+/* title bar height with the tabs */
+#TabsToolbar  {
+}
+/* children of the main toolbar containing tabs and stuff */ 
+#tabbrowser-arrowscrollbox, 
+#pinned-tabs-container{
+}
 
-toolbar#TabsToolbar.browser-toolbar.browser-titlebar hbox.toolbar-items,
-toolbar#TabsToolbar.browser-toolbar.browser-titlebar hbox.toolbar-items hbox#TabsToolbar-customization-target.customization-target { } /* tab width goes here */
+/* the background container for all tabs */
+#TabsToolbar-customization-target {
+    /* background: hsl(214, 27%, 10%);  */
+	border-radius: 999px;
+	margin-bottom:5px;
+	height: 80%;
+	box-shadow: inset 0 0 5px 0 #538bcc !important;
+}
+/* ths is the parent of each tab and contains siblings content and background */
+.tabbrowser-tab {
+	height: 80% !important;
+}
+/* rounding the tab background  for selected, pinned and unselected */
+.tab-background {
+border-radius:999px
+}
+.tab-background {
+  border-radius: var(--tab-border-radius);
+  margin-block: var(--tab-block-margin);
+  min-height: var(--tab-min-height);
+  outline: var(--tab-outline);
+  outline-offset: var(--tab-outline-offset);
 
+  /* stylelint-disable-next-line media-query-no-invalid */
+  @media -moz-pref("browser.nova.enabled") {
+    border: 1px solid transparent;
+  }
+
+  .tabbrowser-tab:hover > .tab-stack > &:not([selected], [multiselected]) {
+    background-color: var(--tab-background-color-hover);
+    outline-color: var(--tab-hover-outline-color);
+  }
+
+  &:is([selected], [multiselected]) {
+    background-color: var(--tab-background-color-selected);
+    outline-color: var(--tab-selected-outline-color);
+    box-shadow: var(--tab-selected-shadow);
+  }
+
+  &:is([selected]:not([multiselected])) {
+    /* The below lines are required for dark, light, and
+      system themes to achieve the gradient border appearance */
+    /* stylelint-disable-next-line media-query-no-invalid */
+    @media (not ((forced-colors) or (-moz-native-theme))) and (-moz-pref("browser.nova.enabled")) {
+      :root:not([lwtheme]) & {
+        background:
+          linear-gradient(var(--tab-background-color-selected)) padding-box,
+          var(--tab-border-color-accent) border-box;
+      }
+    }
+  }
+
+  &[multiselected] {
+    outline-color: var(--focus-outline-color);
+
+    &[selected] {
+      outline-width: 2px;
+      outline-offset: -2px;
+    }
+  }
+
+  #tabbrowser-tabs[orient="vertical"] & {
+    .tabbrowser-tab[small-stack] > .tab-stack > & {
+      box-shadow:
+        0 5px 0 -3px var(--tab-background-color-selected),
+        0 3px var(--tab-dragover-outline-color);
+    }
+
+    .tabbrowser-tab[big-stack] > .tab-stack > & {
+      box-shadow:
+        0 5px 0 -3px var(--tab-background-color-selected),
+        0 3px var(--tab-dragover-outline-color),
+        0 8px 0 -3px var(--tab-background-color-selected),
+        0 6px var(--tab-dragover-outline-color);
+    }
+  }
+
+  #tabbrowser-tabs[orient="horizontal"] & {
+    .tabbrowser-tab[small-stack] > .tab-stack > & {
+      box-shadow:
+        5px 0 0 -3px var(--tab-background-color-selected),
+        3px 0 var(--tab-dragover-outline-color);
+    }
+
+    .tabbrowser-tab[big-stack] > .tab-stack > & {
+      box-shadow:
+        5px 0 0 -3px var(--tab-background-color-selected),
+        3px 0 var(--tab-dragover-outline-color),
+        8px 0 0 -3px var(--tab-background-color-selected),
+        6px 0 var(--tab-dragover-outline-color);
+    }
+
+    &:-moz-locale-dir(rtl) {
+      .tabbrowser-tab[small-stack] > .tab-stack > & {
+        box-shadow:
+          -5px 0 0 -3px var(--tab-background-color-selected),
+          -3px 0 var(--tab-dragover-outline-color);
+      }
+
+      .tabbrowser-tab[big-stack] > .tab-stack > & {
+        box-shadow:
+          -5px 0 0 -3px var(--tab-background-color-selected),
+          -3px 0 var(--tab-dragover-outline-color),
+          -8px 0 0 -3px var(--tab-background-color-selected),
+          -6px 0 var(--tab-dragover-outline-color);
+      }
+    }
+  }
+
+  #tabbrowser-tabs[movingtab] & {
+    transition:
+      background-color 50ms ease,
+      color 50ms ease,
+      outline-color 50ms ease;
+  }
+
+  #tabbrowser-tabs[movingtab-group] & {
+    &[dragover-groupTarget] {
+      background-color: light-dark(var(--dragover-tab-group-color-pale), var(--dragover-tab-group-color));
+      color: light-dark(var(--dragover-tab-group-color), var(--dragover-tab-group-color-pale));
+      outline-color: light-dark(var(--dragover-tab-group-color), var(--dragover-tab-group-color-pale));
+
+      /* stylelint-disable-next-line media-query-no-invalid */
+      @media -moz-pref("browser.nova.enabled") {
+        background-color: var(--dragover-tab-group-color-invert);
+        color: currentColor;
+        outline-color: var(--dragover-tab-group-color);
+        outline-width: 2px;
+      }
+    }
+
+    &:is([selected], [multiselected]) {
+      /* stylelint-disable-next-line media-query-no-invalid */
+      @media not -moz-pref("browser.nova.enabled") {
+        outline-color: var(--dragover-tab-group-color);
+        outline-width: 2px;
+        outline-offset: -2px;
+      }
+    }
+  }
