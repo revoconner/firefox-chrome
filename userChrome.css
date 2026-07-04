@@ -1,0 +1,121 @@
+/* right click tab */
+#tabContextMenu #context_newTabFromTab,
+#tabContextMenu #context_openANewTab,
+#tabContextMenu #context_reopenInContainer,
+#tabContextMenu menu[ext-type]:not(#oconnerrev_gmail_com-menuitem-_mute-site),
+#tabContextMenu #context_moveTabToGroup,
+#tabContextMenu #context_moveTabToSplitView,
+#tabContextMenu #context_reverseSplitView + menuseparator,
+#tabContextMenu #context_reloadTab,
+#tabContextMenu #context_askChat,
+#tabContextMenu #context_bookmarkSelectedTabs,
+#tabContextMenu #context_bookmarkTab,
+#tabContextMenu #context_moveTabOptions,
+#tabContextMenu #share-tab-url-item,
+#tabContextMenu #context_reopenInContainer,
+#tabContextMenu #context_selectAllTabs + menuseparator,
+#tabContextMenu #context_shareSelectedTabs,
+#tabContextMenu #context_undoCloseTab,
+#tabContextMenu #context_closeTabOptions {
+	display: none !important;
+}
+/* right click browser page area */
+#contentAreaContextMenu #context-openlinkinsplitview,
+#contentAreaContextMenu #context-stripOnShareLink,
+#contentAreaContextMenu #offline-qr-code_rugk_github_io-menuitem-_qr-convert-link-text-selection,
+#contentAreaContextMenu #addon_darkreader_org-menuitem-_DarkReader-top,
+#contentAreaContextMenu #ublock0_raymondhill_net-menuitem-_uBlock0-blockElement,
+#contentAreaContextMenu menu[ext-type]:not(menu[label="Bitwarden"]),
+#contentAreaContextMenu #context-setDesktopBackground + menuseparator,
+#contentAreaContextMenu #context-sendpagetodevice,
+#contentAreaContextMenu #context-navigation,
+#contentAreaContextMenu #context-openlinkinusercontext-menu,
+#contentAreaContextMenu #context-bookmarklink,
+#contentAreaContextMenu #context-sendimage {
+	display: none !important;
+}
+
+/* selection on web pages */
+#contentAreaContextMenu #context-viewpartialsource-selection ,
+#contentAreaContextMenu #context-selectall,
+#contentAreaContextMenu #context-copy-link-to-highlight,
+#contentAreaContextMenu #context-copy-clean-link-to-highlight ,
+menuitem[label="QR code from selection"],
+#contentAreaContextMenu #context-take-screenshot,
+#contentAreaContextMenu #context-print-selection,
+#contentAreaContextMenu > menuseparator
+ {
+	display: none !important;
+	
+}
+
+
+/* no container */
+#placesContext_open\:newcontainertab {
+	display: none !important;
+}
+
+
+
+
+/*----------- bookmark toolbar BEGINS-----------------*/
+#PersonalToolbar   {
+	background: hsl(247, 10%, 12%) !important;
+}
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item {
+	padding: 0 5px !important;
+}
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item::after {
+	content: "" !important;
+	position: relative !important;
+	right: -6px !important;
+	transform: translateY(-50%) !important;
+	width: 2px !important;
+	height: 13px !important;
+	background-color: rgba(92, 92, 92, 0.267) !important;
+	top: 31% !important;
+}
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item > image[type="menu"] {
+	color: #009dff !important;
+}
+
+/* hover effect bookmark toolbar items - icons hidden by default, text moves aside, and icons moves becomes visible */
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon {
+	position: relative !important;
+	left: 30% !important;
+	opacity: 0 !important;
+	transition: opacity 0.2s, left 0.2s !important;
+}
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item .toolbarbutton-text {
+	right: 10px !important;
+	position: relative !important;
+	top: 1px !important;
+	color: hsl(0, 0%, 64.3%) !important;
+	transition: right 0.2s, color 0.2s !important;
+}
+
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-icon {
+	left: 0 !important;
+	opacity: 1 !important;
+}
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-text {
+right: 0 !important;
+color: hsl(203, 100%, 50%) !important;
+}
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+  &:not([disabled], [open]):hover {
+    color: hsl(203, 100%, 50%) !important;
+  }
+}
+
+/* ---------- bookmark toolbar END-----------------*/
+
+/* navbar */
+toolbar#nav-bar,
+.browser-toolbar.chromeclass-location {
+	background: #1c1c22 !important;
+}
+
+toolbar#TabsToolbar.browser-toolbar.browser-titlebar hbox.toolbar-items,
+toolbar#TabsToolbar.browser-toolbar.browser-titlebar hbox.toolbar-items hbox#TabsToolbar-customization-target.customization-target { } /* tab width goes here */
+
