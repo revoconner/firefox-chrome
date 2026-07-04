@@ -59,8 +59,9 @@ menuitem[label="QR code from selection"],
 
 
 /*----------- bookmark toolbar BEGINS-----------------*/
-#PersonalToolbar   {
-	background: hsl(247, 10%, 12%) !important;
+#PersonalToolbar {
+	background: #131316 !important;
+	 /* hsl(247, 10%, 12%) !important; */
 }
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item {
 	padding: 0 5px !important;
@@ -72,13 +73,13 @@ menuitem[label="QR code from selection"],
 	transform: translateY(-50%) !important;
 	width: 2px !important;
 	height: 13px !important;
-	background-color: rgba(92, 92, 92, 0.267) !important;
+	background: #131316 !important;
+	/* background-color: rgba(92, 92, 92, 0.267) !important; */
 	top: 31% !important;
 }
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item > image[type="menu"] {
 	color: #009dff !important;
 }
-
 /* hover effect bookmark toolbar items - icons hidden by default, text moves aside, and icons moves becomes visible */
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon {
 	position: relative !important;
@@ -93,29 +94,27 @@ menuitem[label="QR code from selection"],
 	color: hsl(0, 0%, 64.3%) !important;
 	transition: right 0.2s, color 0.2s !important;
 }
-
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-icon {
 	left: 0 !important;
 	opacity: 1 !important;
 	color: hsl(203, 100%, 50%) !important;
-
 }
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-text {
-right: 0 !important;
-color: hsl(203, 100%, 50%) !important;
+	right: 0 !important;
+	color: hsl(203, 100%, 50%) !important;
 }
 toolbarbutton.bookmark-item:not(.subviewbutton) {
-  &:not([disabled], [open]):hover {
-    color: hsl(203, 100%, 50%) !important;
-  }
+	&:not([disabled], [open]):hover {
+		color: hsl(203, 100%, 50%) !important;
+	}
 }
-
 /* ---------- bookmark toolbar END-----------------*/
-
+/* ---------- NAVBAR  STARTS-----------------*/
 /* navbar */
+#navigator-toolbox,
 toolbar#nav-bar,
 .browser-toolbar.chromeclass-location {
-	background: #1c1c22 !important;
+	background: #131316 !important;
 }
 /* the background container for all tabs */
 #TabsToolbar-customization-target {
@@ -123,7 +122,7 @@ toolbar#nav-bar,
 	margin-bottom: 5px !important;
 	height: 80% !important;
 	padding: 0 8px !important;
-	box-shadow: inset 0 0 5px 0 #949494 !important;
+	box-shadow: inset 0 0 1px 0 #949494 !important;
 }
 /* ths is the parent of each tab and contains siblings content and background */
 .tab-background {
@@ -135,24 +134,20 @@ toolbar#nav-bar,
 	height: 38px !important;
 }
 /* tab background  for selected */
+toolbarbutton.tabs-newtab-button,
 .tab-background {
 	&:is([selected], [multiselected]) {
-		background: #000000 !important;
+		background: #121212 !important;
 		box-shadow: inset 0 0 8px 0 #26c3fc !important;
 		border-radius: 999px !important;
 	}
 }
-
 /* tab background  for UNselected */
-.tab-background {
-	&:not([selected], [multiselected]) {
-		border-radius: 999px !important;
-		box-shadow: inset 0 0 2px 0 rgb(130, 130, 130) !important;
-		background: transparent;
-	}
+.tab-background:not([selected], [multiselected]) {
+	border-radius: 999px !important;
+	box-shadow: inset 0 0 1px 0 rgb(130, 130, 130) !important;
+	background: transparent;
 }
-.tab-content {
-	&:not([selected], [multiselected]) {
-		filter: brightness(80%) saturate(80%) !important;
-	}
+.tab-content:not([selected], [multiselected]) {
+	filter: brightness(90%) saturate(80%) !important;
 }

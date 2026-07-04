@@ -31,4 +31,4 @@ setInterval(() => {
 
     // Reload the sheet
     ss.loadAndRegisterSheet(chromefile, ss.USER_SHEET);
-}, 500)
+}, 1000)
