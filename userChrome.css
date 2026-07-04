@@ -73,7 +73,7 @@ menuitem[label="QR code from selection"],
 	transform: translateY(-50%) !important;
 	width: 2px !important;
 	height: 13px !important;
-	background: #131316 !important;
+	background: #29292f !important;
 	/* background-color: rgba(92, 92, 92, 0.267) !important; */
 	top: 31% !important;
 }
@@ -120,19 +120,10 @@ toolbar#nav-bar,
 #TabsToolbar-customization-target {
 	border-radius: 999px !important;
 	margin-bottom: 5px !important;
-	height: 80% !important;
-	padding: 0 8px !important;
 	box-shadow: inset 0 0 1px 0 #949494 !important;
 }
 /* ths is the parent of each tab and contains siblings content and background */
-.tab-background {
-	height: 31px !important;
-	min-height: 30px !important;
-	max-height: 31px !important;
-}
-.tab-content {
-	height: 38px !important;
-}
+
 /* tab background  for selected */
 toolbarbutton.tabs-newtab-button,
 .tab-background {
@@ -145,9 +136,11 @@ toolbarbutton.tabs-newtab-button,
 /* tab background  for UNselected */
 .tab-background:not([selected], [multiselected]) {
 	border-radius: 999px !important;
-	box-shadow: inset 0 0 1px 0 rgb(130, 130, 130) !important;
+	box-shadow: inset 0 0 3px #cecece !important;
 	background: transparent;
 }
 .tab-content:not([selected], [multiselected]) {
 	filter: brightness(90%) saturate(80%) !important;
 }
+/* ---------- NAVBAR  ENDS-----------------*/
+/* url bar */
