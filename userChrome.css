@@ -119,7 +119,6 @@ toolbar#nav-bar,
 /* the background container for all tabs */
 #TabsToolbar-customization-target {
 	border-radius: 999px !important;
-	margin-bottom: 5px !important;
 	box-shadow: inset 0 0 1px 0 #949494 !important;
 }
 /* ths is the parent of each tab and contains siblings content and background */
@@ -141,6 +140,12 @@ toolbarbutton.tabs-newtab-button,
 }
 .tab-content:not([selected], [multiselected]) {
 	filter: brightness(90%) saturate(80%) !important;
+}
+/* firefox view */
+#firefox-view-button,
+#scrollbutton-up,
+#tabbrowser-tabs::before { 
+	display : none !important; 
 }
 /* ---------- NAVBAR  ENDS-----------------*/
 /* url bar */
