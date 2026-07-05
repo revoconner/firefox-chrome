@@ -12,6 +12,62 @@
 	--usrcol-outline-0: #97979700; 
 }
 
+/* height of everything is set here on the top part of the browser */
+
+/* #toolbar-menubar {
+	height: 35px !important;
+	min-height: 35px !important;
+	max-height: 35px !important;
+} */
+#TabsToolbar {
+	height: 35px !important;
+	min-height: 35px !important;
+	max-height: 35px !important;
+}
+.toolbar-items {
+	height: 35px !important;
+	min-height: 35px !important;
+	max-height: 35px !important;
+}
+#TabsToolbar-customization-target {
+	height: 35px !important;
+	min-height: 35px !important;
+	max-height: 35px !important;
+}
+#tabbrowser-tabs {
+	height: 35px !important;
+	min-height: 35px !important;
+	max-height: 35px !important;
+}
+#tabbrowser-arrowscrollbox {
+	height: 35px !important;
+	min-height: 35px !important;
+	max-height: 35px !important;
+}
+.tab-background {
+	height: 35px !important;
+	min-height: 35px !important;
+	max-height: 35px !important;
+		margin-bottom: 0px !important;
+	margin-top: 0px !important;
+			padding-bottom: 0px !important;
+padding-top: 0px !important;
+}
+#nav-bar {
+	height: 38px !important;
+	min-height: 38px !important;
+	max-height: 38px !important;
+}
+tab.tabbrowser-tab {
+	height: 35px !important;
+	margin-bottom: 0px !important;
+	margin-top: 0px !important;
+}
+tab.tabbrowser-tab > stack > hbox {
+	height: 35px !important;
+	min-height: 35px !important;
+	max-height: 35px !important;
+}
 /* right click tab */
 #tabContextMenu #context_newTabFromTab,
 #tabContextMenu #context_openANewTab,
