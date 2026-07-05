@@ -133,8 +133,9 @@ toolbar#nav-bar,
 /*---tabs---- */
 /* the background container for all tabs */
 #tabbrowser-arrowscrollbox {
-	/* border-radius: 999px !important;
-	box-shadow: inset 0 0 1px 0 #1e1e1e !important; */
+  border-radius: 999px !important;
+  box-shadow: inset 0 0 3px 0 #979797 !important;
+  padding: 0 2px !important;
 }
 
 /* ths is the parent of each tab and contains siblings content and background */
@@ -168,9 +169,34 @@ toolbarbutton.tabs-newtab-button,
 }
 /* ---------- NAVBAR  ENDS-----------------*/
 
-
-
-
+/* ---------- MENU BAR BEGINS ------------*/
+#menubar-items {
+	margin: 1px 0 !important;
+	justify-content: center !important;
+	background: transparent !important;
+	box-shadow: inset 0 0 3px 0 #979797 !important;
+	border-radius: 999px !important;
+	padding: 12px 10px !important;
+	max-height: 44px !important;
+}
+#main-menubar > menu > label.menu-text {
+	text-decoration: none !important;
+	text-transform: capitalize !important;
+	color: hsl(0, 0%, 91%) !important;
+	font-size: 13px !important;
+	padding: 0 12px !important;
+}
+#main-menubar > menu:hover > label.menu-text,
+#main-menubar > menu[_moz-menuactive="true"] {
+	background: transparent !important;
+	color: #26c3fc !important;
+}
+u,
+ins {
+	text-decoration: none !important;
+}
+html#main-window body toolbox#navigator-toolbox.chrome-block toolbar#toolbar-menubar.browser-toolbar.chromeclass-menubar.browser-titlebar.customization-target toolbaritem#menubar-items menubar#main-menubar menu#helpMenu menupopup#menu_HelpPopup menuitem#help_reportBrokenSite
+/* ---------- MENU BAR ENDS ------------*/
 
 /* URL BAR BEGINS */
 #nav-bar-customization-target.customization-target toolbaritem#urlbar-container.urlbar-container > #urlbar.urlbar {
