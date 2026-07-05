@@ -8,7 +8,7 @@
 	--usrcol-cyan: var(--usrcol-accent); /* used as accent mostly on tabs */
 	--usrcol-text: hsl(0, 0%, 67%);
 	--usrcol-text-dim: var(--usrcol-text);
-	--usrcol-outline: hsl(240, 7%, 15%)
+	--usrcol-outline: hsl(240, 7%, 15%);
 	--usrcol-outline-0: #97979700; 
 }
 
@@ -68,6 +68,24 @@ tab.tabbrowser-tab > stack > hbox {
 	min-height: 35px !important;
 	max-height: 35px !important;
 }
+
+/*========== NAVIGATOR TOOLBAR, THE MAIN AREA OF THE BROWSER CONTROL SHRINKS WHEN NOT NEEDED ========= */
+toolbox#navigator-toolbox.chrome-block {
+  filter: brightness(75%);
+  height: 5%;
+  transition: filter 0.35s ease, height 0.35s ease;
+  transition-delay: 0.5s;
+}
+toolbox#navigator-toolbox.chrome-block:hover {
+  filter: brightness(100%);
+  height: 7.5%;
+  transition: filter 0.35s ease, height 0.3s ease;
+	transition-delay: 0.1s;
+}
+/*========== NAVIGATOR TOOLBAR, THE MAIN AREA OF THE BROWSER CONTROL SHRINKS WHEN NOT NEEDED ========= */
+
+
+/*==========CONTEXT MENU==============*/
 /* right click tab */
 #tabContextMenu #context_newTabFromTab,
 #tabContextMenu #context_openANewTab,
@@ -321,13 +339,13 @@ toolbar#toolbar-menubar.browser-toolbar.chromeclass-menubar.browser-titlebar.cus
 }
 }
 /* ------- extra buttons pinned ------------  in the URL containing tool bar */
-.toolbaritem-combined-buttons.unified-extensions-item.chromeclass-toolbar-additional {
+.toolbaritem-combined-buttons.unified-extensions-item.chromeclass-toolbar-additional:not(.panel-viewcontainer *) {
   max-height: 36px;
 	position: relative !important;
 	z-index: 0 !important;
    max-height: 36px !important;
 }
-.toolbaritem-combined-buttons.unified-extensions-item.chromeclass-toolbar-additional::before {
+.toolbaritem-combined-buttons.unified-extensions-item.chromeclass-toolbar-additional:not(.panel-viewcontainer *)::before {
 	content: "" !important;
 	position: absolute !important;
 	z-index: -1 !important;
@@ -346,7 +364,6 @@ margin: 0 15px !important;
 
 .toolbaritem-combined-buttons.unified-extensions-item.chromeclass-toolbar-additional > box:hover >toolbarbutton>stack {
   background: transparent !important;
-}
 /* -------------- url bar containing bar done */
 /* ================== TOP PART LAYOUT SHIFTER ======================= */
 /* toolbox as 2x2 grid: nav-bar + TabsToolbar as top columns (Tabs on right keeps win controls in place), PersonalToolbar full-width below */

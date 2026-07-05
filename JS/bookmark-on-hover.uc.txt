@@ -1,0 +1,18 @@
+// ==UserScript==
+// @name           Toolbox On Hover
+// @description    Brighten and resize #navigator-toolbox while hovered
+// ==/UserScript==
+
+const toolbox = document.getElementById("navigator-toolbox");
+
+if (toolbox) {
+    toolbox.addEventListener("mouseenter", () => {
+        toolbox.style.filter = "brightness(100%)";
+        toolbox.style.height = "7.5%";
+    });
+
+    toolbox.addEventListener("mouseleave", () => {
+        toolbox.style.removeProperty("filter");
+        toolbox.style.removeProperty("height");
+    });
+}
