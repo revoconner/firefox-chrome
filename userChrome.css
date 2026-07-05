@@ -80,8 +80,11 @@ menuitem[label="QR code from selection"],
 	width: 2px !important;
 	height: 13px !important;
 	background: #29292f !important;
-	/* background-color: rgba(92, 92, 92, 0.267) !important; */
-	top: 31% !important;
+  /* background-color: rgba(92, 92, 92, 0.267) !important; */
+  top: 26% !important;
+}
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item:nth-last-child(n)::after {
+	display:none;
 }
 #personal-bookmarks #PlacesToolbar #PlacesToolbarItems > .bookmark-item > image[type="menu"] {
 	color: #009dff !important;
@@ -165,7 +168,7 @@ toolbarbutton.tabs-newtab-button,
 .tab-background:not([selected], [multiselected]) {
 	border-radius: 999px !important;
 	box-shadow: inset 0 0 3px 0 #97979700 !important;
-	background: #0e0e0f !important;
+	background: transparent !important;
 	color: #ababab !important;
 
 }
@@ -189,15 +192,15 @@ toolbarbutton.tabs-newtab-button,
 	background: transparent !important;
 	box-shadow: inset 0 0 3px 0 #979797 !important;
 	border-radius: 999px !important;
-	padding: 12px 10px !important;
+	padding: 12px 5px !important;
 	max-height: 44px !important;
 }
 #main-menubar > menu > label.menu-text {
 	text-decoration: none !important;
 	text-transform: capitalize !important;
-	color: hsl(0, 0%, 91%) !important;
+	color: hsl(0, 0%, 64.3%) !important;
 	font-size: 12px !important;
-	padding: 0 6px !important;
+	padding: 0 2px !important;
 }
 #main-menubar > menu:hover > label.menu-text,
 #main-menubar > menu[_moz-menuactive="true"] {
@@ -207,6 +210,15 @@ toolbarbutton.tabs-newtab-button,
 u,
 ins {
 	text-decoration: none !important;
+}
+
+/*----------when the bookmark toolbar is not the defined toolbar but beside the main menu ---------------*/
+toolbar#toolbar-menubar {
+  display: grid !important;
+  grid-template-columns: .05fr .95fr !important;
+}
+toolbaritem#personal-bookmarks {
+  width: fit-content !important;
 }
 /* ---------- MENU BAR ENDS ------------*/
 
