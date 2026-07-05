@@ -1,14 +1,14 @@
 :root {
 	--usrcol-bg: hsl(240, 7%, 8%); /*  color for everything mostly */
-	--usrcol-bg-deep: hsl(0, 0%, 3%); /*  color for URL and pinned extension */
-	--usrcol-tab-selected: hsl(0, 0%, 7%); /*  color for selected tab bg */
+	--usrcol-bg-deep: hsl(240, 7%, 7%); /*  color for URL and pinned extension */
+	--usrcol-tab-selected: hsl(240, 7%, 7%); /*  color for selected tab bg */
 	--usrcol-divider: hsl(240, 7%, 17%);  /*  color for bookmark divider */
 	--usrcol-blue: hsl(203, 100%, 50%);  
 	--usrcol-accent: hsl(196, 97%, 57%);   /* accent for bookmark */
 	--usrcol-cyan: var(--usrcol-accent); /* used as accent mostly on tabs */
 	--usrcol-text: hsl(0, 0%, 67%);
 	--usrcol-text-dim: var(--usrcol-text);
-	--usrcol-outline: hsla(0, 0%, 59%, 0);
+	--usrcol-outline: hsl(240, 7%, 15%)
 	--usrcol-outline-0: #97979700; 
 }
 
