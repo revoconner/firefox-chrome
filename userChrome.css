@@ -116,7 +116,6 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 /* bookmark toolbar extra buttons added like extensions */
 #PersonalToolbar > .toolbaritem-combined-buttons {
-	filter: grayscale(100%);
 }
 /* ---------- bookmark toolbar END-----------------*/
 
