@@ -71,16 +71,30 @@ tab.tabbrowser-tab > stack > hbox {
 
 /*========== NAVIGATOR TOOLBAR, THE MAIN AREA OF THE BROWSER CONTROL SHRINKS WHEN NOT NEEDED ========= */
 toolbox#navigator-toolbox.chrome-block {
-  filter: brightness(75%);
-  height: 5%;
-  transition: filter 0.35s ease, height 0.35s ease;
-  transition-delay: 0.5s;
+  filter: brightness(75%) !important;
+  /* height: 5% !important; */
+  height: 5vh !important;
+  position: absolute !important;
+  z-index: 22 !important; !important;
+  width: 100vw !important;
+  top:0 !important;
+  transition: filter 0.35s ease, height 0.35s ease !important;
+  transition-delay: 0.5s !important;
 }
 toolbox#navigator-toolbox.chrome-block:hover {
-  filter: brightness(100%);
-  height: 7.5%;
-  transition: filter 0.35s ease, height 0.3s ease;
-	transition-delay: 0.35s;
+  filter: brightness(100%) !important;
+  height: 7.5vh !important;
+  transition: filter 0.35s ease, height 0.3s ease !important;
+	transition-delay: 0.35s !important;
+}
+hbox#browser {
+  /* position: relative !important; */
+  position: absolute !important;
+  height: 95vh !important;
+  width: 100vw !important;
+  bottom: 0 !important;
+    z-index: 20 !important; !important;
+
 }
 /*========== NAVIGATOR TOOLBAR, THE MAIN AREA OF THE BROWSER CONTROL SHRINKS WHEN NOT NEEDED ========= */
 
