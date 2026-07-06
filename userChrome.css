@@ -68,6 +68,11 @@ tab.tabbrowser-tab > stack > hbox {
 }
 
 /*========== NAVIGATOR TOOLBAR, THE MAIN AREA OF THE BROWSER CONTROL SHRINKS WHEN NOT NEEDED ========= */
+/* do not scale down browser viewport if fullscreebn is true */
+html[inDOMFullscreen="true"]#main-window #browser {
+  min-height: 100vh !important;
+}
+
 toolbox#navigator-toolbox.chrome-block {
 	filter: brightness(85%) !important;
 	/* height: 5% !important; */
