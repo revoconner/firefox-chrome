@@ -14,11 +14,9 @@
 
 /* height of everything is set here on the top part of the browser */
 
-/* #toolbar-menubar {
-	height: 35px !important;
-	min-height: 35px !important;
+ #toolbar-menubar {
 	max-height: 35px !important;
-} */
+} 
 #TabsToolbar {
 	height: 35px !important;
 	min-height: 35px !important;
@@ -71,30 +69,40 @@ tab.tabbrowser-tab > stack > hbox {
 
 /*========== NAVIGATOR TOOLBAR, THE MAIN AREA OF THE BROWSER CONTROL SHRINKS WHEN NOT NEEDED ========= */
 toolbox#navigator-toolbox.chrome-block {
-  filter: brightness(75%) !important;
-  /* height: 5% !important; */
-  height: 5vh !important;
-  position: absolute !important;
-  z-index: 22 !important; !important;
-  width: 100vw !important;
-  top:0 !important;
-  transition: filter 0.35s ease, height 0.35s ease !important;
-  transition-delay: 0.5s !important;
-}
-toolbox#navigator-toolbox.chrome-block:hover {
-  filter: brightness(100%) !important;
-  height: 7.5vh !important;
-  transition: filter 0.35s ease, height 0.3s ease !important;
+	filter: brightness(75%) !important;
+	/* height: 5% !important; */
+	height: 5vh !important;
+	position: absolute !important;
+	z-index: 22 !important;
+	width: 100vw !important;
+	top: 0 !important;
+	transition: filter 0.35s ease, height 0.35s ease !important;
 	transition-delay: 0.35s !important;
 }
+toolbox#navigator-toolbox.chrome-block toolbar#PersonalToolbar {
+	height: 0 !important;
+	transition: height 0.35s ease !important;
+	transition-delay: 0.35s !important;
+}
+toolbox#navigator-toolbox.chrome-block:hover {
+	filter: brightness(100%) !important;
+	height: 7.5vh !important;
+	transition: filter 0.35s ease, height 0.35s ease !important;
+	transition-delay: 0.35s !important;
+}
+toolbox#navigator-toolbox.chrome-block:hover toolbar#PersonalToolbar {
+	height: 2.45vh !important;
+	transition: height 0.35s ease !important;
+	transition-delay: 0.35s !important;
+}
+
 hbox#browser {
   /* position: relative !important; */
   position: absolute !important;
   height: 95vh !important;
   width: 100vw !important;
   bottom: 0 !important;
-    z-index: 20 !important; !important;
-
+    z-index: 20 !important;
 }
 /*========== NAVIGATOR TOOLBAR, THE MAIN AREA OF THE BROWSER CONTROL SHRINKS WHEN NOT NEEDED ========= */
 
@@ -378,23 +386,23 @@ margin: 0 15px !important;
 
 .toolbaritem-combined-buttons.unified-extensions-item.chromeclass-toolbar-additional > box:hover >toolbarbutton>stack {
   background: transparent !important;
+}
 /* -------------- url bar containing bar done */
 /* ================== TOP PART LAYOUT SHIFTER ======================= */
-/* toolbox as 2x2 grid: nav-bar + TabsToolbar as top columns (Tabs on right keeps win controls in place), PersonalToolbar full-width below */
-/* #navigator-toolbox {
+#navigator-toolbox {
 	display: grid !important;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: minmax(0, 1fr) minmax(540px, 550px);
 	grid-template-areas:
 		"left   right"
-		"bottom bottom";
+		"bottom1 bottom1"
+		"bottom2 bottom2";
 }
-#nav-bar         { grid-area: left  !important; min-width: 0 !important; }
-#TabsToolbar     { grid-area: right !important; min-width: 0 !important; }
-#PersonalToolbar { grid-area: bottom !important; }
-
-/* keep the normally-hidden toolbars out of the 2x2 layout if they ever appear 
-#toolbar-menubar,
+#toolbar-menubar         { grid-area: right  !important; min-width: 0 !important; }
+#TabsToolbar     { grid-area: left !important; min-width: 0 !important; }
+#nav-bar { grid-area: bottom1 !important; }
+#PersonalToolbar  { grid-area: bottom2 !important; }
+/* keep the normally-hidden toolbars out of the 2x2 layout if they ever appear */
 #notifications-toolbar {
 	grid-column: 1 / -1 !important;
 } 
-*/
+
