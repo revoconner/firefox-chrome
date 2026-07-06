@@ -1,15 +1,15 @@
 :root {
-	--usrcol-bg: hsl(240, 7%, 8%); /*  color for everything mostly */
-	--usrcol-bg-deep: hsl(240, 7%, 7%); /*  color for URL and pinned extension */
-	--usrcol-tab-selected: hsl(240, 7%, 7%); /*  color for selected tab bg */
-	--usrcol-divider: hsl(240, 7%, 17%);  /*  color for bookmark divider */
-	--usrcol-blue: hsl(203, 100%, 50%);  
-	--usrcol-accent: hsl(196, 97%, 57%);   /* accent for bookmark */
-	--usrcol-cyan: var(--usrcol-accent); /* used as accent mostly on tabs */
-	--usrcol-text: hsl(0, 0%, 67%);
+	--usrcol-bg: hsl(215.6, 30.3%, 12.5%);
+	--usrcol-bg-deep: hsl(from var(--usrcol-bg) h s calc(l * 0.6));
+	--usrcol-divider: hsl(from var(--usrcol-bg) h calc(s * 1.5) calc(l * 3.75));
+	--usrcol-accent: hsl(183.8, 100%, 62%);
+	--usrcol-text: hsl(0, 0%, 90%);
 	--usrcol-text-dim: var(--usrcol-text);
-	--usrcol-outline: hsl(240, 7%, 15%);
-	--usrcol-outline-0: #97979700; 
+	--usrcol-outline: var(--usrcol-divider);
+	--usrcol-outline-0: transparent;
+	--usrcol-cyan: var(--usrcol-accent);
+	--usrcol-tab-selected: var(--usrcol-bg-deep);
+	--usrcol-blue: var(--usrcol-accent);
 }
 
 /* height of everything is set here on the top part of the browser */
@@ -69,7 +69,7 @@ tab.tabbrowser-tab > stack > hbox {
 
 /*========== NAVIGATOR TOOLBAR, THE MAIN AREA OF THE BROWSER CONTROL SHRINKS WHEN NOT NEEDED ========= */
 toolbox#navigator-toolbox.chrome-block {
-	filter: brightness(75%) !important;
+	filter: brightness(85%) !important;
 	/* height: 5% !important; */
 	height: 5vh !important;
 	position: absolute !important;
