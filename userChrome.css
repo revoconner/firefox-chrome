@@ -74,7 +74,7 @@ html[inDOMFullscreen="true"]#main-window #browser {
 }
 
 toolbox#navigator-toolbox.chrome-block {
-	filter: brightness(85%) !important;
+	filter: brightness(65%) grayscale(30%) !important;
 	/* height: 5% !important; */
 	height: 5vh !important;
 	position: absolute !important;
@@ -90,7 +90,7 @@ toolbox#navigator-toolbox.chrome-block toolbar#PersonalToolbar {
 	transition-delay: 0.35s !important;
 }
 toolbox#navigator-toolbox.chrome-block:hover {
-	filter: brightness(100%) !important;
+	filter: brightness(100%) grayscale(0%) !important;
 	height: 7.5vh !important;
 	transition: filter 0.35s ease, height 0.35s ease !important;
 	transition-delay: 0.35s !important;
@@ -393,6 +393,9 @@ margin: 0 15px !important;
   background: transparent !important;
 }
 /* -------------- url bar containing bar done */
+
+
+
 /* ================== TOP PART LAYOUT SHIFTER ======================= */
 #navigator-toolbox {
 	display: grid !important;
@@ -410,4 +413,15 @@ margin: 0 15px !important;
 #notifications-toolbar {
 	grid-column: 1 / -1 !important;
 } 
-
+/* hide menu items and resize the bar when window is narrow to show more tabs */
+@media (max-width: 1300px) {
+	#menubar-items {
+		display: none;
+	}
+	#toolbar-menubar {
+		max-width: 150px;
+	}
+	#navigator-toolbox {
+		grid-template-columns: minmax(0, 1fr) minmax(120px, 140px);
+	}
+}
