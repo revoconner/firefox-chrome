@@ -428,8 +428,21 @@ margin: 0 15px !important;
 
 
 /* my extenseion */
-panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"],
+#customizationui-widget-panel
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"],
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"],
 panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"] > box[class="panel-viewstack"],
-panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"] > box[class="panel-viewstack"] > stack.webextension-popup-stack {
-	min-height: 1000px;
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"] > box[class="panel-viewstack"] stack.webextension-popup-stack {
+	height: 950px !important;
+	min-height: 1000px !important;
+}
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"] > box[class="panel-viewstack"] stack.webextension-popup-stack > browser,
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"] > box[class="panel-viewstack"] stack.webextension-popup-stack > browser html,
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"] > box[class="panel-viewstack"] stack.webextension-popup-stack > browser html body {
+	height: 900px !important;
+	min-height: 999px !important;
+}
+browser[class*="height: 595px"]  {
+	height: 950px !important;
+	min-height: 1000px !important;
 }
