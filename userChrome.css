@@ -336,36 +336,36 @@ toolbar#toolbar-menubar.browser-toolbar.chromeclass-menubar.browser-titlebar.cus
 }
 /* ---------- MENU BAR ENDS ------------*/
 
-/* URL BAR BEGINS */
+/* URL BAR BEGINS 
 #nav-bar-customization-target.customization-target toolbaritem#urlbar-container.urlbar-container > #urlbar.urlbar {
 	background: transparent !important;
 	border-radius: 999px;
 }
 .urlbar-background, #searchbar {
 	border-radius: 999px !important;
-	/* box-shadow: inset 0 0 3px 0 var(--usrcol-outline-0) !important; */
+	/* box-shadow: inset 0 0 3px 0 var(--usrcol-outline-0) !important;
 	background: var(--usrcol-bg-deep) !important;
 }
-/* pop up menu with suggestion and past searches */
+/* pop up menu with suggestion and past searches 
 .urlbar[breakout][breakout-extend] {
 	& > .urlbar-background {
 		border-radius: 7px !important;
 		background: var(--usrcol-bg) !important;
 	}
 }
-/* special box that comes on extension pages etc */
+/* special box that comes on extension pages etc
 #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button, .searchmode-switcher button.main-button {
   border-radius: 999px !important;
   background: var(--usrcol-bg) !important;
   padding-inline: 24px  !important;
 }
-/* manual width of url bar from the dynamic width */
+/* manual width of url bar from the dynamic width 
 #urlbar-container {
   #nav-bar[downloadsbuttonshown][unifiedextensionsbuttonshown] & {
     min-width: calc(var(--urlbar-container-min-width) * 1.25) !important;
 }
 }
-/* ------- extra buttons pinned ------------  in the URL containing tool bar */
+/* ------- extra buttons pinned ------------  in the URL containing tool bar 
 .toolbaritem-combined-buttons.unified-extensions-item.chromeclass-toolbar-additional:not(.panel-viewcontainer *) {
   max-height: 36px;
 	position: relative !important;
@@ -391,7 +391,7 @@ margin: 0 15px !important;
 
 .toolbaritem-combined-buttons.unified-extensions-item.chromeclass-toolbar-additional > box:hover >toolbarbutton>stack {
   background: transparent !important;
-}
+} */
 /* -------------- url bar containing bar done */
 
 
@@ -424,4 +424,12 @@ margin: 0 15px !important;
 	#navigator-toolbox {
 		grid-template-columns: minmax(0, 1fr) minmax(120px, 140px);
 	}
+}
+
+
+/* my extenseion */
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"],
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"] > box[class="panel-viewstack"],
+panelmultiview[mainViewId="PanelUI-webext-ffsavetabs_revoconner-BAV"] > box[panelopen="true"] > box[class="panel-viewstack"] > stack.webextension-popup-stack {
+	min-height: 1000px;
 }
